@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+
+            height: 500px;
+        }
+
+        #cal {
+
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #calin {
+            padding: 10px;
+            border: solid 5px blue;
+        }
+        #calin input{
+            width: 300px;
+        }
+        #calin p{
+            display: inline-block;
+            background-color: lightgray;
+            color: black;
+            font-weight: bold;
+            padding: 1px;
+            text-align: center;
+            box-shadow: 2px 2px 2px 2px ;
+        }
+        #calin label {
+            display: inline-block;
+            text-align: center;
+            width: 60px;
+            font-weight: bold;
+            box-shadow: 2px 2px 2px 2px ;
+        }
+
+        #le {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="cal" onchange="take()">
+        <div id="calin">
+            <label id="le" for="5tram">500.000</label>
+            <input id="5tram" name="5tram" type="number" max="200">
+            <p style="display: inline;" id="5tramcal">0</p><br>
+            <label id="le" for="2tram">200.000</label>
+            <input id="2tram" name="2tram" type="number" max="200">
+            <p style="display: inline-block;" id="2tramcal">0</p><br>
+            <label id="le" for="1tram">100.000</label>
+            <input id="1tram" name="1tram" type="number" max="200">
+            <p style="display: inline;" id="1tramcal">0</p><br><br>
+
+            <label id="le" for="5chuc">50.000</label>
+            <input id="5chuc" name="5chuc" type="number" max="200">
+            <p style="display: inline;" id="5chuccal">0</p><br><br>
+
+            <label id="le" for="20ngan">20.000</label>
+            <input id="20ngan" name="20ngan" type="number" max="200">
+            <p style="display: inline;" id="20ngancal">0</p><br><br>
+
+            <label id="le" for="10ngan">10.000</label>
+            <input id="10ngan" name="10ngan" type="number" max="200">
+            <p style="display: inline;" id="10ngancal">0</p><br><br>
+
+            <label id="le" for="5ngan">5.000</label>
+            <input id="5ngan" name="5ngan" type="number" max="200">
+            <p style="display: inline;" id="5ngancal">0</p><br><br>
+
+            <label id="le" for="2ngan">2.000</label>
+            <input id="2ngan" name="2ngan" type="number" max="200">
+            <p style="display: inline;" id="2ngancal">0</p><br><br>
+
+            <label id="le" for="1ngan">1.000</label>
+            <input id="1ngan" name="1ngan" type="number" max="200">
+            <p style="display: inline;" id="1ngancal">0</p><br><br>
+
+            <div>
+
+                <button>reset</button>
+                <p id="values">Value!!!</p>
+            </div>
+
+
+        </div>
+
+
+    </form>
+</body>
+<script>
+    let namtram = document.getElementById("5tram");
+    let haitram = document.getElementById("2tram");
+    let mottram = document.getElementById("1tram");
+    let namchuc = document.getElementById("5chuc");
+    let haichuc = document.getElementById("20ngan");
+    let muoichuc = document.getElementById("10ngan");
+    let namngan = document.getElementById("5ngan");
+    let haingan = document.getElementById("2ngan");
+    let motngan = document.getElementById("1ngan");
+
+    let inputs = document.getElementById("calin");
+    inputs.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+        }
+    });
+    let total = 0;
+    console.log(inputs.querySelectorAll("p"))
+    var formatter = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' });
+    function take() {
+
+        total = 0;
+        document.getElementById("5tramcal").innerText = (Number((namtram.value) == null ? 0 : (namtram.value)) * 500000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        document.getElementById("2tramcal").innerText = (Number((haitram.value) == null ? 0 : (haitram.value)) * 200000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        document.getElementById("1tramcal").innerText = (Number((mottram.value) == null ? 0 : (mottram.value)) * 100000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        document.getElementById("5chuccal").innerText = (Number((namchuc.value) == null ? 0 : (namchuc.value)) * 50000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        document.getElementById("20ngancal").innerText = (Number((haichuc.value) == null ? 0 : (haichuc.value)) * 20000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        document.getElementById("10ngancal").innerText = (Number((muoichuc.value) == null ? 0 : (muoichuc.value)) * 10000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        document.getElementById("5ngancal").innerText = (Number((namngan.value) == null ? 0 : (namngan.value)) * 5000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        document.getElementById("2ngancal").innerText = (Number((haingan.value) == null ? 0 : (haingan.value)) * 2000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        document.getElementById("1ngancal").innerText = (Number((motngan.value) == null ? 0 : (motngan.value)) * 1000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+
+        inputs.querySelectorAll("p").forEach((input) => {
+
+
+
+            if (input.id != "values") {
+                var number = parseFloat(input.textContent.replace(/[^\d-]/g, ""));
+                total += number;
+
+            }
+            else {
+
+            }
+
+        })
+
+        console.log(total);
+        document.getElementById("values").innerText = total.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+    }
+</script>
+
+</html>
