@@ -25,9 +25,21 @@
 
         #calin {
             padding: 10px;
-            border: solid 5px lightslategrey;
-            background-color: bisque;
+            box-shadow: 0px 0px 5px 5px lightslategray;
+            background-color: lavender;
+            animation-name: animations;
+            animation-duration: 2s;
+            animation-timing-function:ease-in-out;
+            animation-iteration-count: infinite;
         }
+       @keyframes animations {
+        0%{ box-shadow: 0px 0px 5px 6px lightslategray;}
+        20%{ box-shadow: 0px 0px 5px 7px lightslategray;}
+        40%{ box-shadow: 0px 0px 5px 8px lightslategray;}
+        60%{ box-shadow: 0px 0px 5px 9px lightslategray;}
+        80%{ box-shadow: 0px 0px 5px 10px lightslategray;}
+        100%{ box-shadow: 0px 0px 5px 11px lightslategray;}
+       }
         #calin input{
             width: 300px;
         }
@@ -93,7 +105,7 @@
 
             <div style="margin-left: 130px;">
                 <button type="button" id="reset_btn">reset</button>
-                <p id="values">Value!!!</p>
+                <p id="values" style="margin-left: 50px;">Value!!!</p>
             </div>
 
 
