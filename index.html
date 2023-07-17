@@ -7,22 +7,26 @@
     <title>Calculator</title>
     <style>
         body {
-
+            background-image: url("https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-6/343404239_1008347043930945_1417329986468681339_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=TJIRyHhBf54AX_zzVIf&_nc_ht=scontent.fsgn5-9.fna&oh=00_AfDSU9jrxWtbq3M2nCGvVcHfsWVthi6WnKl6_sTDqDDTSg&oe=64B96328");
+            background-size: 100% 120%;
+            background-repeat: no-repeat;
             height: 500px;
         }
 
         #cal {
-
+            
             height: 100%;
             display: flex;
             flex-direction: row;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
+
         }
 
         #calin {
             padding: 10px;
-            border: solid 5px blue;
+            border: solid 5px lightslategrey;
+            background-color: bisque;
         }
         #calin input{
             width: 300px;
@@ -51,7 +55,7 @@
 </head>
 
 <body>
-    <form id="cal" onchange="take()" method="post">
+    <form id="cal" onchange="take()">
         <div id="calin">
             <label id="le" for="5tram">500.000</label>
             <input id="5tram" name="5tram" type="number" max="200">
@@ -87,15 +91,18 @@
             <input id="1ngan" name="1ngan" type="number" max="200">
             <p style="display: inline;" id="1ngancal">0</p><br><br>
 
-            <div>
-
-                <p><a style="border:solid 1px red" href="https://kenlyer.github.io/money.github.io/">reset</a></p>
+            <div style="margin-left: 130px;">
+                <button type="button" id="reset_btn">reset</button>
                 <p id="values">Value!!!</p>
             </div>
 
 
         </div>
-        <iframe style="height:400px;width:400px;" src="https://www.calculator.net/"></iframe>
+
+
+        <div id="calin2" style="width: 400px;height: 425px;">
+            <iframe style="height: 100%;width: 100%;" src="https://www.desmos.com/scientific?lang=vi"></iframe>
+        </div>
 
 
     </form>
@@ -150,6 +157,21 @@
 
         console.log(total);
         document.getElementById("values").innerText = total.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+
+    }
+    let a = document.getElementById("reset_btn");
+    a.addEventListener("click",hello);
+
+
+
+    function hello(){
+        inputs.querySelectorAll("input").forEach((input)=>{
+            input.value = 0;
+        })
+        inputs.querySelectorAll("p").forEach((input)=>{
+            input.innerText = 0;
+        })
+
     }
 </script>
 
