@@ -105,6 +105,7 @@
 
             <div style="margin-left: 130px;">
                 <button type="button" id="reset_btn">reset</button>
+                <button type="button" id="test_btn">test API button</button>
                 <p id="values" style="margin-left: 50px;">Value!!!</p>
             </div>
 
@@ -186,5 +187,33 @@
 
     }
 </script>
+<script>
+    var test = document.getElementById("test_btn");
+    test.addEventListener("click", () => {
+        fetch('./demo.json')
+            .then(item => item.json())
+            .then(
+                item => 
+                {
+                    item.age = 31
+                    console.log(item)
+                    var updatedData  = JSON.stringify(item);
+                    console.log(updatedData);
 
+                    fetch('./demo.json',{
+                        method:'POST',
+                        headers:{
+                            'Content-Type': 'application/json'
+                        },
+                        body: updatedData
+                    })
+                    .then(response => response.json())
+                    .then(data => console.log(data))
+                    
+                }
+                )
+                .catch(error => console.error(error))
+    })
+
+</script>
 </html>
