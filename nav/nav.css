@@ -5,20 +5,33 @@ body{
 }
 /*nav*/
 nav{
-    height: auto; 
-    margin: 0px;
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     border:solid 1px rgb(91, 91, 91);
     background-color:rgb(249, 52, 52);
 }
+nav div:nth-child(2){
+    flex: 1;
+}
+nav div:nth-child(3){
+    border: solid 3px;
+    border-radius: 20px;
+    margin-right: 20px;
+    box-shadow: 2px 2px 2px 2px;
+    padding: 5px;
+}
 nav div{
     margin-left: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
     font-weight:bold;
+    text-shadow: 1px 1px 0px lightgray,
+    2px 2px 0px lightgray,
+    3px 3px 0px lightgray,
+    4px 4px 0px lightgray,
+    5px 5px 0px lightgray ;
 }
 nav img{
     height: 100%;
@@ -38,9 +51,10 @@ nav img{
 
 
 
+
 /*aside*/
 .datatable{
-    height:36em;
+    height:100vh;
     border:solid 1px black;
     display: flex;
     flex-direction: row;
@@ -73,7 +87,7 @@ nav img{
 }
 .datatable .thedata{
     background-image: url("https://scontent.fsgn5-2.fna.fbcdn.net/v/t39.30808-6/360150356_257769050337568_6643207250613385970_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=3xM2jwroo-QAX-w1q25&_nc_ht=scontent.fsgn5-2.fna&oh=00_AfB6Bh-6Q6wJlzA--rrAvUrc5WTVya7Fbt3L_kCUaKItlw&oe=64CE4D4D");
-    background-size: 110% 150%;
+    background-size: 100% 120%;
     background-repeat: no-repeat;
     flex:6
 }
