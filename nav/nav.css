@@ -24,7 +24,7 @@ nav div:nth-child(3){
 }
 nav div{
     margin-left: 10px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:Cambria;
     font-size: 50px;
     font-weight:bold;
     text-shadow: 1px 1px 0px lightgray,
