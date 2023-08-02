@@ -65,7 +65,4 @@ function hello() {
 }
 
 ////////////////////////////////////////////////////////////////////
-var cal = document.getElementById("movecal");
-cal.addEventListener("click", function () {
-    window.location.href("/Arata_calculator/nav/nav.html");
-})
+

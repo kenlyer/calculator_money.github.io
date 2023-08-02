@@ -11,37 +11,25 @@
 
 #calin {
     padding: 10px;
-    box-shadow: 0px 0px 5px 5px lightslategray;
-    background-color: lavender;
-    animation-name: animations;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
+    box-shadow: 0px 0px 5px 5px white;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0.8;
+    /* animation-name: animations;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; */
 }
-
+#calin:hover{
+    box-shadow: 0px 0px 9px 11px white;
+    transition: 1s;
+}
 @keyframes animations {
     0% {
-        box-shadow: 0px 0px 5px 6px lightslategray;
+        box-shadow: 0px 0px 5px 6px white;
     }
-
-    20% {
-        box-shadow: 0px 0px 5px 7px lightslategray;
-    }
-
-    40% {
-        box-shadow: 0px 0px 5px 8px lightslategray;
-    }
-
-    60% {
-        box-shadow: 0px 0px 5px 9px lightslategray;
-    }
-
-    80% {
-        box-shadow: 0px 0px 5px 10px lightslategray;
-    }
-
     100% {
-        box-shadow: 0px 0px 5px 11px lightslategray;
+        
+        box-shadow: 0px 0px 9px 11px white;
     }
 }
 
