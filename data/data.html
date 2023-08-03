@@ -16,6 +16,7 @@
     <nav>
         <img src="https://i.ytimg.com/vi/TQV00GtB5Rk/maxresdefault.jpg" alt="logo">
         <div>Arata-BoardGame-v3.0</div>
+        <div id="time">value</div>
     </nav>
     <div class="datatable">
         <aside>
@@ -26,24 +27,50 @@
             <!--<button id="testbutton">click me</button>-->
             <div class="module-month">
                 <div class="input-month">
-                    <input id="recive-month" type="month">
+                    <input id="recive-month" type="month" >
                     <button id="set">set</button>
                     <button id="create">create_month</button>
+                </div>
+                <div class="module-day">
+                    <select name="select-day" id="select-day" class="select-day" size="4">
+                    </select>
+                    <button id="create-day">create</button>
                 </div>
                 <div class="data-month" id="data-month">
                     
                 </div>
             </div>
             <div class="module-month">
-               
+                <div class="output-month">
+                    <div class="day_" id="day_">value</div>
+                    <div class="month_" id="month_">value</div>
+                </div>
+                <div class="data-month" id="data-out">
+                    
+                </div>
+                <div class="add-month" id="add-setting">
+                    <!-- <input type="text" maxlength="text" id="key">
+                    <input type="text" maxlength="number" id="valueOfKey">
+                    <button id="change-item">CHANGE & ADD</button> -->
+                </div>
             </div>
         </div>
     </div>
 </body>
+<footer>
+
+</footer>
 <script src="data.js" type="module">
 </script>
 <script>
-  
+   setInterval(() => {
+        var time = new Date();
+        var hour = time.getHours();
+        var minutes = time.getMinutes();
+        var sec = time.getSeconds();
+        document.getElementById("time").innerText = `${hour}:${minutes}:${sec}`
+    }, 1000)
+    
 </script>
 
 </html>
