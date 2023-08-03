@@ -27,11 +27,8 @@ nav div{
     font-family:Cambria;
     font-size: 50px;
     font-weight:bold;
-    text-shadow: 1px 1px 0px lightgray,
-    2px 2px 0px lightgray,
-    3px 3px 0px lightgray,
-    4px 4px 0px lightgray,
-    5px 5px 0px lightgray ;
+    text-shadow: 1px 1px 0px lightgray,2px 2px 0px lightgray,3px 3px 0px lightgray,4px 4px 0px lightgray,
+5px 5px 0px lightgray ;
 }
 nav img{
     height: 100%;
@@ -93,3 +90,8 @@ nav img{
 }
 
 /*fooer*/
+footer{
+    width: 100%;
+    background-color: black;
+    height: 100px;
+}
