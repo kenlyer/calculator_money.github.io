@@ -19,7 +19,7 @@
     margin:2px;
 }
 .module-day{
-    width: 100%;
+    width: 400px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
